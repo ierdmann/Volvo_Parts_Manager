@@ -1,0 +1,13 @@
+certifi==2020.6.20
+cffi==1.15.0
+click==8.0.3
+cryptography==36.0.1
+et-xmlfile==1.1.0
+Flask @ file:///tmp/build/80754af9/flask_1634118196080/work
+itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+Jinja2 @ file:///tmp/build/80754af9/jinja2_1635780242639/work
+MarkupSafe @ file:///home/builder/ci_310/markupsafe_1640791577099/work
+openpyxl==3.0.9
+pycparser==2.21
+pyOpenSSL==22.0.0
+Werkzeug @ file:///tmp/build/80754af9/werkzeug_1635505089296/work
