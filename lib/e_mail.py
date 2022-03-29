@@ -5,8 +5,8 @@ from email.mime.text import MIMEText
 
 
 def sendMail1(MailText):
-	senderEmail = "u42570@hanse-franz.de"
-	empfangsEmail = "ilmarinenerdmann@gmail.com"
+	senderEmail = "sender_Mail_Adresse"
+	empfangsEmail = "empfänger_Mail_Adresse"
 	msg = MIMEMultipart()
 	msg['From'] = senderEmail
 	msg['To'] = empfangsEmail
@@ -14,10 +14,10 @@ def sendMail1(MailText):
 
 	emailText = MailText
 	msg.attach(MIMEText(emailText, 'html'))
-	attachment = "/../pythonProject/static/OrderPrintLists/Auftra-6902773.xlsx"
-	server = smtplib.SMTP('mail.manitu.de', 993) # Die Server Daten
+	attachment = "pfad zu der angehängeten Datei"
+	server = smtplib.SMTP('smtp_des_Servers', "port_des_servers") # Die Server Daten
 	server.starttls()
-	server.login(senderEmail, "KRYudQXhZKPM") # Das Passwort
+	server.login(senderEmail, "Passwort") # Das Passwort
 	text = msg.as_string()
 	server.sendmail(senderEmail, empfangsEmail, text,)
 	server.quit()
@@ -26,14 +26,14 @@ def sendMail1(MailText):
 def sendMail(mailTo, subject,  title, MailText):
 	to = str(mailTo)
 	print("Starte versenden der Mail")
-	gmail__user = 'ilmarinenerdmann@googlemail.com'
-	hanse_franz_user = 'u42570@hanse-franz.de'
-	gmail__pwd = 'nmqiueatzwcjveay'
-	hanse_franz_pwd = 'KRYudQXhZKPM'
-	smtp_gmail = "smtp.gmail.com"
-	port_gmail = 587
-	smtp_hanse_franz = "mail.manitu.de"
-	port_hanse_franz = 993
+	gmail__user = 'sender_Mail_adresse'
+	hanse_franz_user = 'empfänger_Mail_Adresse'
+	gmail__pwd = 'sender_passwort'
+	hanse_franz_pwd = 'sender_passwort2'
+	smtp_gmail = "sender_smtp"
+	port_gmail = "sender_port"
+	smtp_hanse_franz = "sender_smtp"
+	port_hanse_franz = "sender_port"
 	smtpserver = smtplib.SMTP(smtp_gmail, port_gmail)
 	smtpserver.ehlo()
 	print("Mailserver verbindungs aufbau")
