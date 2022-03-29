@@ -14,7 +14,7 @@ try:
 	table_order = "partsorder"			#Tabelle für Datenbank für Teile Bestellungen
 	data_typs= "id INTEGER PRIMARY KEY, orders INT, job INT, part text, amounts real, OrderDate text"
 	first_value = f"6902578, 1, 'VO 698996', 2.3, '{dateNow}'"
-	receive_mail = "ilmarinenerdmann@freenet.de"
+	receive_mail = "empfänger_Mail_Adresse"
 	subject = "Die IP Adresse nach dem Start"
 	header_mail = "Der Raspberry wurde neugestartet!"
 	mail_message = f"Die aktuelle IP-Adresse lautet: {IpReader()}:5000"
@@ -74,24 +74,6 @@ try:
 		amounts_nr = request.args.get("Menge")
 		orderStatus(order_nr, job_nr, part_nr, amounts_nr, database_parts, table_parts, date_now)
 		return render_template("order.html")
-
-	#Vielleicht löschen
-	#@app.route("/manage")
-	#def manage():
-	#	dateNow = date()
-#		order = [0]
-#		search = request.args.get("search")
-#		ordernr = request.args.get("Auftragsnummer")
-#		if ordernr != None:
-#			print(f"Der Speicher ist {ordernr}")
-#			search = ordernr
-#		order = [a if a in order  else a for a in FetchDataBase(database_parts, f"SELECT * FROM {table_parts} WHERE orders ={search} ORDER BY job")]
-#		ordernr = request.args.get("Auftragsnummer")
-#		job = request.args.get("Jobnummer")
-#		part = request.args.get("Teilenummer")
-#		amounts = request.args.get("Menge")
-#		orderStatus(ordernr, job, part, amounts, database_parts, table_parts, dateNow)
-#		return render_template("manageorder.html", len=len(order), order=order, table=search)
 
 	@app.route("/landing")
 	def landing():
@@ -305,5 +287,5 @@ try:
 
 except FileNotFoundError as error:
 	print(f"Fehler 1234 {error}")
-	sendMail("ilmarinenerdmann@freenet.de", "Es ist ein Fehler aufgetreten", "Fehler", f"Es ist ein Fehler aufgetreten: {error}")
+	sendMail("empfänger_Mail_Adresse", "Es ist ein Fehler aufgetreten", "Fehler", f"Es ist ein Fehler aufgetreten: {error}")
 
