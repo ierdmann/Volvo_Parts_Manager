@@ -1,0 +1,71 @@
+{% extends 'main/index.html' %}
+{% block content %}
+<div class="container">
+    <br>
+  <div class="p-5 mb-4 bg-light rounded-3 shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="container-fluid py-1">
+               <h1>Teile erfassen!</h1>
+    <hr>
+   <form  action="/joborder" method="POST, GET">
+   <div class="form-group ">
+    <label>Auftragsnummer:</label>
+    <input type="text" class="form-control text-start" id="Auftragsnummer" name="Auftragsnummer"  type="number" placeholder="Auftragsnummrt" value={{ table }}>
+  </div>
+  <br>
+    <div class="form-group">
+    <label>Jobnummer:</label>
+    <input type="text" class="form-control" id="Jobnummer" name="Jobnummer" type="number" placeholder="Jobnummer" value={{ jobnr }}>
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Teilenummer:</label>
+    <input type="text" class="form-control" id="Teilenummer" name="Teilenummer" type="text" placeholder="Teilenummer">
+  </div>
+  <br>
+    <div class="form-group">
+    <label>Menge:</label>
+    <input type="text" class="form-control" id="Menge" name="Menge" type="number" placeholder="Menge" min="0.1">
+  </div>
+  <br>
+     <button type="submit" class="btn btn-primary text-center">Bestätigen</button>
+</form>
+
+
+</div>
+  </div>
+
+
+<a href="/order_print?Auftragsnummer={{ table }}"> <h1 class="text-center">Auftrag: {{ table }}!</h1></a>
+      <hr>
+      <br>
+<form action="/manage">
+<table class="table table-striped table-hover shadow-lg p-3 mb-5 bg-body rounded">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Jobnummer</th>
+      <th scope="col">Teilenummer</th>
+      <th scope="col">Menge</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+        {% for a in range(0, len) %}
+          <tr>
+          <th scope="row">{{ tables[a][0] }}</th>
+          <td>{{ tables[a][2] }}</td>
+          <td><a href="/part_info?Teilenummer={{ tables[a][3] }}">{{ tables[a][3] }}</a></td>
+          <td>{{ tables[a][4] }}</td>
+            </tr>
+        {% endfor %}
+
+
+  </tbody>
+</table>
+</form>
+<div class="container">
+
+
+
+{% endblock %}

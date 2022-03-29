@@ -1,0 +1,39 @@
+{% extends 'main/index.html' %}
+{% block content %}
+
+<div class="container">
+<br>
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <h1>Querschnittsberechnung</h1>
+    <hr>
+      <br><h2>Der empfohlene Leitungsquerschnitt beträgt: {{ ergebniss }} mm²</h2>
+      <br>
+<form  action="/landing" method="POST, GET">
+
+  <div class="form-group">
+    <label>Leitungen</label>
+    <input type="text" class="form-control text-start" id="Leitungen" name="Leitungen" placeholder="2" value="2">
+    <br>
+      <label>Länge in Meter</label>
+    <input type="text" class="form-control text-start" id="Länge" name="Länge" placeholder="10" value="10">
+    <br>
+      <label>Stromstärke in Ampere</label>
+    <input type="text" class="form-control text-start" id="Stromstärke" name="Stromstärke" placeholder="80A" value="80">
+    <br>
+      <label>Spezifischer Leitwert</label>
+    <input type="text" class="form-control text-start" id="Leitwert" name="Leitwert" placeholder="56" value="56">
+    <br>
+      <label>Zulässiger Spannungsfall bei 24V</label>
+    <input type="text" class="form-control text-start" id="Spannungsfall" name="Spannungsfall" placeholder="3" value="0.03">
+    <br>
+      <label>Betriebsspannung in Volt</label>
+    <input type="text" class="form-control text-start" id="Betriebsspannung" name="Betriebsspannung" placeholder="24" value="24">
+  </div>
+  <br>
+     <button type="submit" class="btn btn-primary text-center">Auswählen</button>
+</form>
+
+
+      </div>
+    {% endblock %}

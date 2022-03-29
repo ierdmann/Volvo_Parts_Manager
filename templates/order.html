@@ -1,0 +1,38 @@
+{% extends 'main/index.html' %}
+{% block content %}
+<div class="container">
+<br>
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <h1>Teile erfassen!</h1>
+    <hr>
+<form  action="/order" method="POST, GET">
+
+  <div class="form-group">
+    <label>Auftragsnummer:</label>
+    <input type="text" class="form-control text-start" id="Auftragsnummer" name="Auftragsnummer" placeholder="Auftragsnummer">
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label>Jobnummer:</label>
+    <input type="text" class="form-control" id="Jobnummer" name="Jobnummer" placeholder="Jobnummer">
+  </div>
+  <br>
+  <div class="form-group">
+    <label>Teilenummer:</label>
+    <input type="text" class="form-control" id="Teilenummer" name="Teilenummer" placeholder="Teilenummer">
+  </div>
+  <br>
+    <div class="form-group">
+    <label>Menge:</label>
+    <input type="text" class="form-control" id="Menge" name="Menge" placeholder="Menge">
+  </div>
+  <br>
+     <button type="submit" class="btn btn-primary">Bestätigen</button>
+</form>
+
+</div>
+
+  </div>
+{% endblock %}

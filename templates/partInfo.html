@@ -1,0 +1,17 @@
+{% extends 'main/index.html' %}
+{% block content %}
+<div class="container">
+<br>
+
+  <div class="p-5 mb-4 bg-light rounded-3">
+<h1>Hier findest du das richtige Werkzeug zu den jeweiligen Pin / Stecker etc. ...</h1>
+<hr>
+<form  action="/part_info" method="POST, GET">
+<label>Teilenummer:</label>
+    <input type="text" class="form-control text-start" id="Teilenummer" name="Teilenummer" placeholder="Teilenummer">
+  </div>
+  <br>
+     <button type="submit" class="btn btn-primary text-center">Auswählen</button>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'main/index.html' %}
+{% block content %}
+<div class="container">
+    <br>
+  <div class="p-5 mb-4 bg-light rounded-3 shadow-lg p-3 mb-5 bg-body rounded">
+          <div class="container-fluid py-1">
+               <h1>Teile bestellen!</h1>
+    <hr>
+    <form  action="/part_ordered" method="POST, GET">
+    <div class="form-group ">
+    <label>Teilenummer:</label>
+    <input type="text" class="form-control text-start"  name="Teilenummer"  type="number" placeholder="Teilenmummer">
+    </div>
+    <br>
+     <div class="form-group">
+    <label>Menge:</label>
+    <input type="text" class="form-control" id="Menge" name="Menge" type="number" placeholder="Menge" min="0.1">
+    </div>
+    <br>
+    <div class="form-group">
+    <label>Lagerort:</label>
+    <input type="text" class="form-control" id="Jobnummer" name="Ort" type="number" placeholder="zB. K3">
+    </div>
+     <button type="submit" class="btn btn-primary text-center">Bestellen</button>
+</form>
+
+
+</div>
+  </div>
+    </div>
+{% endblock %}
